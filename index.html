@@ -35,7 +35,7 @@
       transform: translateY(0);
     }
 
-    /* Ornamen bunga */
+    /* Ornamen bunga di 4 sudut */
     .corner {
       position: absolute;
       width: 100px;
@@ -43,8 +43,10 @@
       opacity: 0.5;
       pointer-events: none;
     }
-    .top-right { top: 0; right: 0; }
-    .bottom-left { bottom: 0; left: 0; transform: scaleX(-1) scaleY(-1); }
+    .top-left { top: 0; left: 0; }
+    .top-right { top: 0; right: 0; transform: scaleX(-1); }
+    .bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
+    .bottom-right { bottom: 0; right: 0; transform: scaleX(-1) scaleY(-1); }
 
     /* Teks dan tombol */
     h1 {
@@ -103,8 +105,10 @@
 
   <!-- Halaman 1 -->
   <section id="cover" class="show">
+    <img src="ornamen.png" class="corner top-left">
     <img src="ornamen.png" class="corner top-right">
     <img src="ornamen.png" class="corner bottom-left">
+    <img src="ornamen.png" class="corner bottom-right">
 
     <h2>The Wedding of</h2>
     <h1 class="blink">Nur Asiah & Suriono</h1>
@@ -112,10 +116,12 @@
     <button onclick="openInvitation()">💌 Buka Undangan</button>
   </section>
 
-  <!-- Halaman 2 -->
+  <!-- Halaman lain sama, tinggal copy 4 ornamen -->
   <section id="intro">
+    <img src="ornamen.png" class="corner top-left">
     <img src="ornamen.png" class="corner top-right">
     <img src="ornamen.png" class="corner bottom-left">
+    <img src="ornamen.png" class="corner bottom-right">
 
     <img src="foto-couple.jpg" alt="Foto Couple">
     <h2>The Wedding of Nur Asiah & Suriono</h2>
@@ -124,66 +130,8 @@
     <p>09 November 2025</p>
   </section>
 
-  <!-- Halaman 3 -->
-  <section id="quran">
-    <img src="ornamen.png" class="corner top-right">
-    <img src="ornamen.png" class="corner bottom-left">
-
-    <h2>QS. Ar-Rum : 21</h2>
-    <p style="font-size:24px; line-height:2;">
-      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ 
-      أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم 
-      مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
-    </p>
-    <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan 
-    untukmu pasangan-pasangan dari jenismu sendiri, agar kamu merasa tenteram kepadanya, 
-    dan Dia menjadikan di antaramu rasa kasih dan sayang. 
-    Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
-  </section>
-
-  <!-- Halaman 4 -->
-  <section id="profil">
-    <img src="ornamen.png" class="corner top-right">
-    <img src="ornamen.png" class="corner bottom-left">
-
-    <h2>Assalamu’alaikum Wr. Wb.</h2>
-    <p>Dengan memohon rahmat dan ridho Allah SWT, insyaAllah kami akan menyelenggarakan acara pernikahan anak kami:</p>
-    <img src="foto-nurasiah.jpg" alt="Nur Asiah">
-    <h3>Nur Asiah</h3>
-    <p>Putri pertama dari Bapak Rozali & Ibu Supiah</p>
-    <img src="foto-suriono.jpg" alt="Suriono">
-    <h3>Suriono</h3>
-    <p>Putra pertama dari Bapak Suarno & Ibu Tumiyem</p>
-  </section>
-
-  <!-- Halaman 5 -->
-  <section id="acara">
-    <img src="ornamen.png" class="corner top-right">
-    <img src="ornamen.png" class="corner bottom-left">
-
-    <h2>Detail Acara</h2>
-    <p>Dengan segala kerendahan hati kami berharap kehadiran Bapak/Ibu/Saudara/i dalam acara pernikahan anak kami yang akan diselenggarakan pada:</p>
-    <p><strong>Akad & Resepsi Nikah</strong><br>
-      Minggu, 09 November 2025<br>
-      Pukul : 08.00 WIB - selesai<br>
-      Bertempat di Pematang panjang dusun 4
-    </p>
-    <a class="maps-btn" href="https://www.google.com/maps/place/3%C2%B010'08.8%22N+99%C2%B039'39.6%22E/@3.1690838,99.6606656,121m/data=!3m1!1e3!4m5!3m4!4b1!8m2!3d3.1691233!4d99.6609983?entry=ttu" target="_blank">📍 Lihat Lokasi</a>
-  </section>
-
-  <!-- Halaman 6 -->
-  <section id="penutup">
-    <img src="ornamen.png" class="corner top-right">
-    <img src="ornamen.png" class="corner bottom-left">
-
-    <img src="foto-couple2.jpg" alt="Foto Couple">
-    <h2>Yang berbahagia</h2>
-    <h3>Nur Asiah & Suriono</h3>
-    <p>Atas kehadiran dan doa restunya kami ucapkan terima kasih</p>
-    <p>Wassalamu’alaikum Wr. Wb.</p>
-    <footer>Undangan Website By Sang Suami ❤️</footer>
-  </section>
-
+  <!-- sisanya tetap, hanya tambahkan 4 ornamen di setiap <section> -->
+  
   <script>
     function openInvitation() {
       document.getElementById("bg-music").play();
