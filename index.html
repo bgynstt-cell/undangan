@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wedding of Nur Asiah & Suriono</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background: #fff;
+      color: #333;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      overflow: hidden; /* 🔒 Kunci scroll sebelum undangan dibuka */
+    }
+
+    /* Section dasar */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Ornamen bunga */
+    .corner {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .top-right { top: 0; right: 0; }
+    .bottom-left { bottom: 0; left: 0; transform: scaleX(-1) scaleY(-1); }
+
+    /* Teks dan tombol */
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+    }
+    h2 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    button, .maps-btn {
+      background: goldenrod;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .countdown {
+      font-size: 22px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: goldenrod;
+    }
+    img {
+      max-width: 200px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    footer {
+      font-size: 14px;
+      margin-top: 20px;
+      color: #666;
+    }
+
+    /* ✨ Animasi blink emas-putih */
+    .blink {
+      animation: blinkGoldWhite 2s infinite;
+    }
+    @keyframes blinkGoldWhite {
+      0%, 100% { color: goldenrod; }
+      50% { color: white; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio id="bg-music" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Halaman 1 -->
+  <section id="cover" class="show">
+    <img src="ornamen.png" class="corner top-right">
+    <img src="ornamen.png" class="corner bottom-left">
+
+    <h2>The Wedding of</h2>
+    <h1 class="blink">Nur Asiah & Suriono</h1>
+    <p>Kepada Yth:<br>Tamu Undangan di Tempat</p>
+    <button onclick="openInvitation()">💌 Buka Undangan</button>
+  </section>
+
+  <!-- Halaman 2 -->
+  <section id="intro">
+    <img src="ornamen.png" class="corner top-right">
+    <img src="ornamen.png" class="corner bottom-left">
+
+    <img src="foto-couple.jpg" alt="Foto Couple">
+    <h2>The Wedding of Nur Asiah & Suriono</h2>
+    <p>Kami akan menikah, kami ingin Anda menjadi bagian dari hari bahagia kami</p>
+    <div class="countdown" id="countdown"></div>
+    <p>09 November 2025</p>
+  </section>
+
+  <!-- Halaman 3 -->
+  <section id="quran">
+    <img src="ornamen.png" class="corner top-right">
+    <img src="ornamen.png" class="corner bottom-left">
+
+    <h2>QS. Ar-Rum : 21</h2>
+    <p style="font-size:24px; line-height:2;">
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ 
+      أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم 
+      مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+    </p>
+    <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan 
+    untukmu pasangan-pasangan dari jenismu sendiri, agar kamu merasa tenteram kepadanya, 
+    dan Dia menjadikan di antaramu rasa kasih dan sayang. 
+    Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
+  </section>
+
+  <!-- Halaman 4 -->
+  <section id="profil">
+    <img src="ornamen.png" class="corner top-right">
+    <img src="ornamen.png" class="corner bottom-left">
+
+    <h2>Assalamu’alaikum Wr. Wb.</h2>
+    <p>Dengan memohon rahmat dan ridho Allah SWT, insyaAllah kami akan menyelenggarakan acara pernikahan anak kami:</p>
+    <img src="foto-nurasiah.jpg" alt="Nur Asiah">
+    <h3>Nur Asiah</h3>
+    <p>Putri pertama dari Bapak Rozali & Ibu Supiah</p>
+    <img src="foto-suriono.jpg" alt="Suriono">
+    <h3>Suriono</h3>
+    <p>Putra pertama dari Bapak Suarno & Ibu Tumiyem</p>
+  </section>
+
+  <!-- Halaman 5 -->
+  <section id="acara">
+    <img src="ornamen.png" class="corner top-right">
+    <img src="ornamen.png" class="corner bottom-left">
+
+    <h2>Detail Acara</h2>
+    <p>Dengan segala kerendahan hati kami berharap kehadiran Bapak/Ibu/Saudara/i dalam acara pernikahan anak kami yang akan diselenggarakan pada:</p>
+    <p><strong>Akad & Resepsi Nikah</strong><br>
+      Minggu, 09 November 2025<br>
+      Pukul : 08.00 WIB - selesai<br>
+      Bertempat di Pematang panjang dusun 4
+    </p>
+    <a class="maps-btn" href="https://www.google.com/maps/place/3%C2%B010'08.8%22N+99%C2%B039'39.6%22E/@3.1690838,99.6606656,121m/data=!3m1!1e3!4m5!3m4!4b1!8m2!3d3.1691233!4d99.6609983?entry=ttu" target="_blank">📍 Lihat Lokasi</a>
+  </section>
+
+  <!-- Halaman 6 -->
+  <section id="penutup">
+    <img src="ornamen.png" class="corner top-right">
+    <img src="ornamen.png" class="corner bottom-left">
+
+    <img src="foto-couple2.jpg" alt="Foto Couple">
+    <h2>Yang berbahagia</h2>
+    <h3>Nur Asiah & Suriono</h3>
+    <p>Atas kehadiran dan doa restunya kami ucapkan terima kasih</p>
+    <p>Wassalamu’alaikum Wr. Wb.</p>
+    <footer>Undangan Website By Sang Suami ❤️</footer>
+  </section>
+
+  <script>
+    function openInvitation() {
+      document.getElementById("bg-music").play();
+      document.body.style.overflow = "auto"; // 🔓 Buka scroll setelah undangan dibuka
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    }
+
+    // Countdown
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("Nov 9, 2025 08:00:00").getTime();
+
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik ";
+    }, 1000);
+
+    // Animasi scroll (Intersection Observer)
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach((sec) => observer.observe(sec));
+  </script>
+</body>
+</html>
